@@ -1,0 +1,23 @@
+<div *ngIf="_selectedPet" class="container modalPopup">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="big-dialog" style="background-color: #fff3cd">
+        <div class="clearfix">
+          <div class="pull-left dialog-picture">
+            <img class="small-profile-picture" [src]="'https://pettinder.herokuapp.com/'+ _selectedPet.image">
+          </div>
+          <h3>{{_selectedPet.name}}</h3>
+          <p>{{_selectedPet.profileText}}</p>
+        </div>
+        <div class="clearfix">
+          <a routerLink="" class="btn btn-default">Cancel</a>
+          <form [formGroup]="newDateForm" (ngSubmit)="onSubmit()">
+            <label>Name</label>
+            <input type="text" class="form-control">
+            <button type="submit" class="btn btn-primary pull-right">Let's Play</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
